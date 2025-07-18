@@ -1,6 +1,7 @@
 import Project from "./modules/project";
 import Note from "./modules/note";
 import Todo from "./modules/todo";
+import {makeUI} from "./ui/appUI"
 
 class App{
     constructor( ){
@@ -18,6 +19,8 @@ class App{
         const DefaultProject = new Project([defaultTodo],[defaultNote],tomorrow);
 
         this.ProjectList.push(DefaultProject);
+
+        makeUI();
             
     }
 
@@ -41,6 +44,7 @@ class App{
         return totalTasks;
     }
 }
+
 
 
 

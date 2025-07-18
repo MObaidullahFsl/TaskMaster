@@ -11,7 +11,8 @@ class Todo {
     set increasePriority(newPriority){
         this.priority=newPriority;
     }
-    
+
 }
+
 
 export default Todo;
