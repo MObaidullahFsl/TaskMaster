@@ -20,6 +20,26 @@ class App{
         this.ProjectList.push(DefaultProject);
             
     }
+
+    addProject(project){
+        this.ProjectList.push(project);
+    }
+
+    removeProject(project){
+        const toRemove = project.name;
+        
+        this.ProjectList = this.ProjectList.filter((i)=>i.name != toRemove);
+        
+    }
+
+    listAll(){
+        const totalTasks = [];
+        this.ProjectList.forEach(element => {
+            totalTasks.concat(element.todoList);
+        });
+
+        return totalTasks;
+    }
 }
 
 
