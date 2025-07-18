@@ -7,6 +7,11 @@ class Todo {
         this.priority = priority; 
         this.done = done; 
     }
+
+    set increasePriority(newPriority){
+        this.priority=newPriority;
+    }
+    
 }
 
 export default Todo;

@@ -11,10 +11,17 @@ class Project {
     addTask(task){
         this.todoList.push(task);
     }
-    removeTask(task){
-        this.todoList = this.todoList.filter((todo)=>todo.name != task.name);
+    removeTask(t){
+        this.todoList = this.todoList.filter((todo)=>todo.title != t.title);
     }
-    
+    addNote(note){
+        this.notesList.push(note);
+    }
+    removeNote(note){
+        this.notesList=this.notesList.filter((n)=>{ n.text != note.text });
+    }
+
+
 }
 
 export default Project
