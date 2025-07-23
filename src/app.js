@@ -10,17 +10,18 @@ class App{
 
     makeApp(){
 
+        const name = "Default Project"
         const date = new Date();
         const tomorrow  = new Date(date);
         tomorrow.setDate(date.getDate()+1);
         const defaultTodo = new Todo("Default Task","Hey this is a default Task supposed to remind you something useful", tomorrow, "Low",false);
         const defaultNote = new Note();
 
-        const DefaultProject = new Project([defaultTodo],[defaultNote],tomorrow);
+        const DefaultProject = new Project(name,[defaultTodo],[defaultNote],tomorrow);
 
         this.ProjectList.push(DefaultProject);
 
-        makeUI();
+        
             
     }
 

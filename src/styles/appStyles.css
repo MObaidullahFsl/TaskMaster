@@ -24,7 +24,8 @@ body{
     justify-content: space-between;
     background-color: var(--sec);
     border-bottom: 1px solid blue;  
-    padding:20px 30px;
+    padding:40px 30px;
+    align-items: center;
 }
 
 .sidebar{
@@ -33,7 +34,7 @@ body{
     justify-content: center;
     align-items: center;
     background-color: var(--bg-prim);
-    padding:0 20px;
+    padding:0 50px;
     color:white;
 
     
@@ -47,9 +48,14 @@ body{
 
 .dashboard{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    
     background-color: var(--prim);
     width: 100%;
     
+    
+}
+.links{
+    display: flex;
+    flex-direction: row;
+    gap:10px;
 }

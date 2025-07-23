@@ -1,7 +1,12 @@
 import App from "./app";
+import { makeUI } from "./ui/appUI";
 
 const app = new App; 
+ 
+console.log(app);
 
 app.makeApp();
 
-console.log(app);
+makeUI(app);
+
+

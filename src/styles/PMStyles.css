@@ -1,0 +1,19 @@
+.PMbody{
+    background-color: var(--prim);
+    border:1px solid black;
+    position: fixed; top:50%; left:50%; 
+    transform: translate(-50%,-50%)scale(0);
+    transition: transform 50ms ease;
+    pointer-events: none;
+    border-radius: 10%;
+    width:1000px;
+    height:500px;
+    z-index: 999;
+    max-width: 80%;
+} 
+
+
+.PMbody.Clicked{
+    transform: translate(-50%,-50%)scale(1);
+    pointer-events: auto;
+}
