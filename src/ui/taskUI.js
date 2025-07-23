@@ -1,0 +1,57 @@
+import "../styles/taskStyles.css"
+
+let taskBar = document.createElement("div");
+
+function expandProject(Project,projectBar){
+    
+    taskBar.innerHTML="";
+
+    let tasksList = document.createElement("div"); 
+
+    tasksList = Project.todoList;
+    
+    tasksList.forEach(task=>{
+
+    
+    const taskTitle = document.createElement("div");
+    const taskDesc = document.createElement("div");
+    const taskDue = document.createElement("div");
+    const priority = document.createElement("div");
+    const topRow = document.createElement("div");
+    const done = document.createElement("input");
+    
+    done.type = "checkbox";
+
+    let taskdone = task.done;
+
+    taskBar.classList.add("taskBar");
+    taskTitle.classList.toggle("taskTitle");    
+    taskDesc.classList.toggle("taskDesc");
+    taskDue.classList.toggle("taskDue");
+    priority.classList.toggle("priority");
+    done.classList.toggle("done");
+
+    taskBar.appendChild(topRow);
+    topRow.appendChild(taskTitle);
+    topRow.appendChild(done);
+    taskBar.appendChild(taskDesc)
+    taskBar.appendChild(taskDue);
+
+        taskTitle.textContent = task.title;
+        taskDesc.textContent = task.description;
+        priority.textContent = task.priority;
+        taskDue.textContent = task.dueDate;
+
+    projectBar.appendChild(taskBar);
+    
+    })
+    
+
+}
+
+function closeProject(projectBar){
+    projectBar.removeChild(taskBar);
+}
+
+
+export {expandProject,closeProject}
