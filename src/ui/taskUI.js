@@ -1,18 +1,15 @@
 import "../styles/taskStyles.css"
+import { createTask } from "../ui/createTask";
 
-let taskBar = document.createElement("div");
-
-function expandProject(Project,projectBar){
+function makeTasks(Project,tasksArea){
     
-    taskBar.innerHTML="";
+    tasksArea.innerHTML = "";
 
-    let tasksList = document.createElement("div"); 
-
-    tasksList = Project.todoList;
+    let tasksList = Project.todoList;
     
     tasksList.forEach(task=>{
 
-    
+    const taskBar = document.createElement("div");
     const taskTitle = document.createElement("div");
     const taskDesc = document.createElement("div");
     const taskDue = document.createElement("div");
@@ -42,16 +39,18 @@ function expandProject(Project,projectBar){
         priority.textContent = task.priority;
         taskDue.textContent = task.dueDate;
 
-    projectBar.appendChild(taskBar);
+    tasksArea.appendChild(taskBar);
+
+     createTask(Project,tasksArea);
     
     })
     
 
 }
 
-function closeProject(projectBar){
-    projectBar.removeChild(taskBar);
+function closeProject(tasksArea){
+    tasksArea.removeChild(taskBar);
 }
 
 
-export {expandProject,closeProject}
+export {makeTasks,closeProject}

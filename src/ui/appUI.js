@@ -1,7 +1,7 @@
 
 import "../styles/appStyles.css" 
-import {body,header,sidebar,links,dashboard,content,addProject,makeProject,homeOptions} from "./domHelpers"; 
-
+import {body,header,sidebar,links,dashboard,content,addProject,homeOptions} from "./domHelpers"; 
+import { makeProject } from "./projectUI";
 import {ProjModalBody} from "./createProject"
 
 function makeUI(app){
@@ -15,18 +15,12 @@ function makeUI(app){
 
      homeOptions();
 
-     addProject.addEventListener("click",()=>{
-        
-        if(addProject.classList.contains("Clicked")){
+     addProject.addEventListener("click",()=>{  
              ProjModalBody.classList.toggle("Clicked");
-        } else
-            {
-            ProjModalBody.classList.toggle("Clicked");
-
-            } 
-                
-       
+         
      })
+
+     
 
 }
 

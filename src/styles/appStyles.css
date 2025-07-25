@@ -6,14 +6,16 @@
   --bg-sec:#0b3c49;
   --spacing-small: 8px;
   --spacing-large: 16px;
-  --max-width: 1200px;
+  
 }
 
-
+html{
+    max-height: 100vh;
+}
 body{
     margin:0;
     padding:0;
-    background-color:bisque;
+    background-color:azure;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -31,27 +33,28 @@ body{
 .sidebar{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content:flex-start;
+    align-items:flex-start;
     background-color: var(--bg-prim);
-    padding:0 50px;
+    padding:30px 50px;
     color:white;
-
+    min-height: 100%;
+    
     
 }
 
 .content{
     display: flex;
-    height: 91vh;
+    min-height: 100vh;
     width: auto;
 }
 
 .dashboard{
     display: flex;
-    
+    flex-direction: column;
     background-color: var(--prim);
     width: 100%;
-    
+    height: 100%;
     
 }
 .links{

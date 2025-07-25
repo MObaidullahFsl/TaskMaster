@@ -9,4 +9,6 @@ app.makeApp();
 
 makeUI(app);
 
+export default app;
+
 
