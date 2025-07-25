@@ -1,6 +1,6 @@
 
 import "../styles/appStyles.css" 
-import {body,header,sidebar,links,dashboard,content,addProject,homeOptions} from "./domHelpers"; 
+import {body,header,sidebar,links,dashboard,content,addProject,removeProject,homeOptions} from "./domHelpers"; 
 import { makeProject } from "./projectUI";
 import {ProjModalBody} from "./createProject"
 
@@ -20,6 +20,12 @@ function makeUI(app){
          
      })
 
+     removeProject.addEventListener("click",()=>{  
+             console.log("remove");
+             
+         
+     })
+     
      
 
 }

@@ -18,14 +18,19 @@ const buttons = document.querySelector(".buttons");
     addProject.classList.toggle("addProject");
     addProject.textContent = "Add Project";
 
+    const removeProject = document.createElement("div");
+    removeProject.classList.toggle("removeProject");
+    removeProject.textContent = "Remove Project";
 
+    
 function homeOptions(){
  
     buttons.appendChild(addProject);
+    buttons.appendChild(removeProject);
 
 }
 
 
 
 
-export {body,header,sidebar,links,dashboard,content,addProject,homeOptions}; 
+export {body,header,sidebar,links,dashboard,content,addProject,removeProject,homeOptions}; 

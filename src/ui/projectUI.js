@@ -4,6 +4,7 @@ import addImage from "../assets/add.png"
 import { makeTasks } from "./taskUI";
 import { taskModal } from "./createTask";
 import { TMbody } from "./createTask";
+import app from ""
 
 function makeProject(Project){
     
@@ -51,6 +52,13 @@ function makeProject(Project){
     arrowButton.classList.toggle("arrowButton");
     
     buttonHolder.appendChild(arrowButton);
+
+    projectBar.addEventListener("click",()=>{
+        if(dashboard.classList.contains("remove")){
+            projectBar.classList.add("remove");
+            
+        }
+    })
 
     makeTasks(Project,tasksArea);
 
