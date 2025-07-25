@@ -81,6 +81,8 @@ submitPM.addEventListener("click",()=>{
     const newProj = new Project(nameVal,[],[newNote],dueVal);
     app.addProject(newProj);
     
+    ProjModalBody.classList.remove("Clicked");
+
     dashboard.innerHTML = "";
 
     for(const p in app.ProjectList){

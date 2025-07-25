@@ -7,7 +7,13 @@ import {ProjModalBody} from "./createProject"
 function makeUI(app){
     console.log("starting ui");
     
+    dashboard.innerHTML = "";
+
     const projectList = app.ProjectList;
+
+    if(projectList.length === 0){
+        return;
+    }
 
      for(const p in projectList){
          makeProject(projectList[p]);
@@ -21,8 +27,8 @@ function makeUI(app){
      })
 
      removeProject.addEventListener("click",()=>{  
-             console.log("remove");
-             
+             dashboard.classList.toggle("remove");
+             alert("Select Project to Remove!");
          
      })
      

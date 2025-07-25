@@ -4,7 +4,8 @@ import addImage from "../assets/add.png"
 import { makeTasks } from "./taskUI";
 import { taskModal } from "./createTask";
 import { TMbody } from "./createTask";
-import app from ""
+import app from "../index"
+import { makeUI } from "./appUI";
 
 function makeProject(Project){
     
@@ -53,13 +54,6 @@ function makeProject(Project){
     
     buttonHolder.appendChild(arrowButton);
 
-    projectBar.addEventListener("click",()=>{
-        if(dashboard.classList.contains("remove")){
-            projectBar.classList.add("remove");
-            
-        }
-    })
-
     makeTasks(Project,tasksArea);
 
     taskModal(Project,tasksArea);
@@ -74,20 +68,30 @@ function makeProject(Project){
             element.classList.toggle("Expanded")
         });
 
-        // if(projectBar.classList.contains("Expanded")){
-        //     makeTasks(Project,tasksArea);
-            
-        //     projectBar.appendChild(addBox);
-        // }else{
-        //     closeProject(tasksArea);
-            
-        //     projectBar.removeChild(addBox); 
-        // }
 
     })
 
     addBox.addEventListener("click",()=>{
         TMbody.classList.toggle("Clicked"); 
+    })
+
+
+    projectBar.addEventListener("click",()=>{
+         if(dashboard.classList.contains("remove")){
+            projectBar.classList.add("removeProj");
+            
+        }else{
+            projectBar.classList.remove("removeProj");
+        }
+    })
+    projectBar.addEventListener("transitionend",(element)=>{
+        if(element.propertyName == "transform"){
+            dashboard.classList.remove("remove")
+            app.removeProject(Project);
+            makeUI(app);
+
+        }
+            
     })
 
 }
