@@ -25,7 +25,8 @@ const highOption = document.createElement("option");
 
 const submitTM = document.createElement("button");
 
-function createTask(Project,projectBar){
+function taskModal(Project,taskArea){
+
 
 TMbody.classList.add("TMbody");
 title.classList.add("TMtitle");
@@ -90,11 +91,11 @@ submitTM.addEventListener("click",()=>{
     const newTodo = new Todo(titleVal,descVal,dueVal,priorityVal);
     
     Project.addTask(newTodo);
-   
-    makeTasks(Project,projectBar);
+    TMbody.classList.remove("Clicked");
+    makeTasks(Project,taskArea);
 })
 
 
 }
 
-export { TMbody,createTask };
+export { TMbody,taskModal };

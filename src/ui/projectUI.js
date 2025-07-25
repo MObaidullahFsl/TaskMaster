@@ -2,7 +2,7 @@ import {body,header,sidebar,links,dashboard,content} from "./domHelpers"
 import dropDown from "../assets/dropDown.png"
 import addImage from "../assets/add.png"
 import { makeTasks } from "./taskUI";
-import { createTask } from "./createTask";
+import { taskModal } from "./createTask";
 import { TMbody } from "./createTask";
 
 function makeProject(Project){
@@ -54,15 +54,17 @@ function makeProject(Project){
 
     makeTasks(Project,tasksArea);
 
-    createTask(Project,projectBar);
+    taskModal(Project,tasksArea);
+
+    projectBar.appendChild(addBox);
 
     buttonHolder.addEventListener("click",()=>{
 
         projectBar.classList.toggle("Expanded");
 
-        // projectBar.querySelectorAll("*").forEach(element => { 
-        //     element.classList.toggle("Expanded")
-        // });
+        projectBar.querySelectorAll("*").forEach(element => { 
+            element.classList.toggle("Expanded")
+        });
 
         // if(projectBar.classList.contains("Expanded")){
         //     makeTasks(Project,tasksArea);

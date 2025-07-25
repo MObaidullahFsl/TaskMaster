@@ -42,6 +42,8 @@
     object-fit: contain;
     width:20px;
     height:20px;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
 }
 
 .buttonHolder{
@@ -58,4 +60,11 @@
 }
 .tasksArea{
     margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+.arrowButton.Expanded{
+    transform: rotate(180deg);
+    
 }

@@ -1,5 +1,5 @@
 import "../styles/taskStyles.css"
-import { createTask } from "../ui/createTask";
+import { taskModal} from "../ui/createTask";
 
 function makeTasks(Project,tasksArea){
     
@@ -40,8 +40,6 @@ function makeTasks(Project,tasksArea){
         taskDue.textContent = task.dueDate;
 
     tasksArea.appendChild(taskBar);
-
-     createTask(Project,tasksArea);
     
     })
     
