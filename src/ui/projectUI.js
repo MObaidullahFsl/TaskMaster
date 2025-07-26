@@ -85,7 +85,7 @@ function makeProject(Project){
         }
     })
     projectBar.addEventListener("transitionend",(element)=>{
-        if(element.propertyName == "transform"){
+        if(element.propertyName == "transform" && dashboard.classList.contains("remove")){
             dashboard.classList.remove("remove")
             app.removeProject(Project);
             makeUI(app);

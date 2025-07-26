@@ -56,6 +56,7 @@ body{
     background-color: var(--prim);
     width: 100%;
     height: 100%;
+    overflow-x: hidden;
     
 }
 .links{

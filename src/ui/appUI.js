@@ -23,6 +23,9 @@ function makeUI(app){
 
      addProject.addEventListener("click",()=>{  
              ProjModalBody.classList.toggle("Clicked");
+             if(dashboard.classList.contains("remove")){
+                dashboard.classList.remove("remove");
+             }
          
      })
 

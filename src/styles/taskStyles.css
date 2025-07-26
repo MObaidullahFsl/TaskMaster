@@ -2,5 +2,19 @@
     max-width:100%;
     background-color: var(--bg-prim);
     height:auto;
+    opacity: 100;
+    transform: translateY(0px);
+    transition: 
+    opacity 0.5s ease-in-out 0.2s,
+    transform 0.5s ease-in-out 0s;
     
+}
+.taskTopRow{
+    display: flex;
+    justify-content: space-between;
+
+}
+.taskBar.removeTask{
+    opacity: 0;
+    transform: translateX(50px);
 }

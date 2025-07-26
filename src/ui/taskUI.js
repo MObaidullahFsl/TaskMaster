@@ -16,7 +16,7 @@ function makeTasks(Project,tasksArea){
     const priority = document.createElement("div");
     const topRow = document.createElement("div");
     const done = document.createElement("input");
-    
+
     done.type = "checkbox";
 
     let taskdone = task.done;
@@ -27,6 +27,7 @@ function makeTasks(Project,tasksArea){
     taskDue.classList.toggle("taskDue");
     priority.classList.toggle("priority");
     done.classList.toggle("done");
+    topRow.classList.toggle("taskTopRow");
 
     taskBar.appendChild(topRow);
     topRow.appendChild(taskTitle);
@@ -39,15 +40,24 @@ function makeTasks(Project,tasksArea){
         priority.textContent = task.priority;
         taskDue.textContent = task.dueDate;
 
-    tasksArea.appendChild(taskBar);
+    tasksArea.appendChild(taskBar); 
+
+    done.addEventListener("click",()=>{
+        taskBar.classList.add("removeTask");
+    })
+    
+    taskBar.addEventListener("transitionend",(transition)=>{
+        if(transition.propertyName === "transform" && taskBar.classList.contains("removeTask")){
+            Project.removeTask(task);
+            makeTasks(Project,tasksArea);
+        }
+    })
     
     })
     
-
 }
-
 function closeProject(tasksArea){
-    tasksArea.removeChild(taskBar);
+    // tasksArea.removeChild(taskBar);
 }
 
 
