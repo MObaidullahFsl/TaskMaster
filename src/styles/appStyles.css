@@ -28,8 +28,12 @@ body{
     border-bottom: 1px solid blue;  
     padding:40px 30px;
     align-items: center;
+    font-size: 22px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-
+.title{
+    margin-left: 45px;
+}
 .sidebar{
     display: flex;
     flex-direction: column;
@@ -39,6 +43,8 @@ body{
     padding:30px 50px;
     color:white;
     min-height: 100%;
+    font-size: 20px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     
     
 }
@@ -48,6 +54,7 @@ body{
     min-height: 100vh;
     width: auto;
     background-color: var(--prim);
+
 }
 
 .dashboard{
@@ -62,11 +69,22 @@ body{
 .links{
     display: flex;
     flex-direction: row;
-    gap:10px;
+    gap:15px;
+    font-size: 20px;
+    color: blue;
 }
+.links>*:visited,.links>*:hover{
+    color: purple;
+}
+
 .buttons{
     display: flex;
     flex-direction: column;
     gap:15px;
     text-wrap: nowrap;
+    font-size: 16px;
+}
+.buttons > *{
+    border:2px solid var(--bg-sec);
+    padding:10px 20px;
 }
