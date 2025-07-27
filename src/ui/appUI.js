@@ -2,7 +2,7 @@
 import "../styles/appStyles.css" 
 import {body,header,sidebar,links,dashboard,content,addProject,removeProject,homeOptions} from "./domHelpers"; 
 import { makeProject } from "./projectUI";
-import {ProjModalBody} from "./createProject"
+import {ProjModalBody,createProjectModal} from "./createProject"
 
 function makeUI(app){
     console.log("starting ui");
@@ -20,6 +20,8 @@ function makeUI(app){
      }
 
      homeOptions();
+     
+     createProjectModal();
 
      addProject.addEventListener("click",()=>{  
              ProjModalBody.classList.toggle("Clicked");
@@ -34,7 +36,6 @@ function makeUI(app){
              alert("Select Project to Remove!");
          
      })
-     
      
 
 }

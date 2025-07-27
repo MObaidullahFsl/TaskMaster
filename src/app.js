@@ -47,7 +47,7 @@ class App{
     }
     toJSON(){
         return{
-            projectlist: this.ProjectList,
+        ProjectList: this.ProjectList,
             type: "app"
         }
     }

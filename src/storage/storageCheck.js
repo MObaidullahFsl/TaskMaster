@@ -17,3 +17,5 @@ function storageAvailable(type) {
     );
   }
 }
+
+export default storageAvailable;

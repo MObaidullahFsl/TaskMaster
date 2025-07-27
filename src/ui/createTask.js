@@ -3,6 +3,7 @@ import { body,dashboard } from "./domHelpers";
 import Todo from "../modules/todo";
 import { makeProject } from "./projectUI";
 import { makeTasks } from "./taskUI";
+import { populateStorage } from "../storage/storageFix";
 
 const TMbody = document.createElement("div");
 const title = document.createElement("div");
@@ -93,6 +94,8 @@ submitTM.addEventListener("click",()=>{
     Project.addTask(newTodo);
     TMbody.classList.remove("Clicked");
     makeTasks(Project,taskArea);
+
+    populateStorage(app);
 })
 
 

@@ -4,6 +4,9 @@ import Project from "../modules/project"
 import { makeProject } from "./projectUI";
 import Note from "../modules/note"
 import app from "../index";
+import { populateStorage } from "../storage/storageFix";
+
+
 
 const ProjModalBody = document.createElement("div");
 const title = document.createElement("div");
@@ -12,6 +15,9 @@ const name = document.createElement("div");
 const dueDate = document.createElement("div");
 const color = document.createElement("div");
 
+function createProjectModal(){
+
+    
 ProjModalBody.classList.toggle("PMbody");
 title.classList.toggle("PMtitle");
 name.classList.toggle("PMname");
@@ -99,6 +105,11 @@ submitPM.addEventListener("click",()=>{
     for(const p in app.ProjectList){
          makeProject(app.ProjectList[p]);
      }
+
+     populateStorage(app);
 })
 
-export { ProjModalBody };
+
+}
+
+export { ProjModalBody,createProjectModal };
