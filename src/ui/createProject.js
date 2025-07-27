@@ -28,16 +28,27 @@ const noteLabel = document.createElement("label");
 const nameInput = document.createElement("input");
 const dueDateInput = document.createElement("input");
 const colorInput = document.createElement("input");
+const noteInput = document.createElement("input")
 
 const submitPM = document.createElement("button");
 submitPM.textContent = "submit";
 
+
+    const date = new Date();
+    const tomorrow  = new Date(date);
+    tomorrow.setDate(date.getDate()+1);
+    const formattedDate = tomorrow.toISOString().split('T')[0];
+
+
 nameInput.type = "text";
 dueDateInput.type = "date";
 colorInput.type = "color";
-
-const noteInput = document.createElement("input")
 noteInput.type = "text";
+
+nameInput.value = "Default Project";
+colorInput.value = "#0b3c49";
+noteInput.value = "default note";
+dueDateInput.value = formattedDate;
 
 nameLabel.for="text"
 dueDateLabel.for="date"
@@ -78,7 +89,7 @@ submitPM.addEventListener("click",()=>{
     const colorVal = colorInput.value;
     const noteVal  = noteInput.value;  
     const newNote = new Note(noteVal);
-    const newProj = new Project(nameVal,[],[newNote],dueVal);
+    const newProj = new Project(nameVal,colorVal,[],[newNote],dueVal);
     app.addProject(newProj);
     
     ProjModalBody.classList.remove("Clicked");

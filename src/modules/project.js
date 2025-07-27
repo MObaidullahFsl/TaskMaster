@@ -1,11 +1,12 @@
 
 class Project {
-    constructor(name = "sample project" ,todoList = [], notesList = [],expiryDate) {
+    constructor(name = "sample project" ,color,todoList = [], notesList = [],expiryDate) {
         this.name = name;
         this.todoList = todoList;
         this.notesList = notesList;
         this.date = new Date().getDate();
         this.expiryDate = expiryDate;
+        this.color = color;
     }
 
     addTask(task){
@@ -20,7 +21,9 @@ class Project {
     removeNote(note){
         this.notesList=this.notesList.filter((n)=>{ n.text != note.text });
     }
-
+    setColor(color){
+        this.color = color;
+    }
 
 }
 

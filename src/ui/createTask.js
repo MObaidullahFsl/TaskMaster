@@ -34,9 +34,9 @@ desc.classList.add("TMdesc");
 dueDate.classList.add("TMdueDate");
 priority.classList.add("TMpriority");
 
-lowOption.value = "Low";
-medOption.value = "Medium";
-highOption.value = "High";
+lowOption.value = "low";
+medOption.value = "medium";
+highOption.value = "high";
 
 lowOption.textContent = "Low";
 medOption.textContent = "Medium";

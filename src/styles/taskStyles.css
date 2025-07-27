@@ -1,20 +1,45 @@
 .taskBar{
     max-width:100%;
-    background-color: var(--bg-prim);
-    height:auto;
+    
+    height:100px;
     opacity: 100;
     transform: translateY(0px);
     transition: 
     opacity 0.5s ease-in-out 0.2s,
     transform 0.5s ease-in-out 0s;
-    
+    display: flex;
+    flex-direction: row;
+ 
 }
 .taskTopRow{
     display: flex;
     justify-content: space-between;
+    padding:10px 15px;
 
 }
 .taskBar.removeTask{
     opacity: 0;
     transform: translateX(50px);
+}
+.taskContent{
+    display: flex;
+    flex-direction: column;
+    padding:10px 20px;
+    font-size: 18px;
+    width: 100%;
+    background-color: var(--bg-prim);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+}
+.taskPrior{
+    width:10px;
+    height:100%;
+    border-top-left-radius:10px;
+    border-bottom-left-radius:10px;
+}
+
+.taskTitle{
+font-weight: bold;
+font-size: 20px;
 }

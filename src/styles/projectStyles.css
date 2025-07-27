@@ -9,7 +9,7 @@
     max-width: 95%;
     width:100%;
     max-height: 50px;
-    overflow: hidden;
+    overflow-y: hidden;
     transition: 
         background-color 0.3s ease-in 0.2s,
         max-height 0.4s ease-in-out,
@@ -22,7 +22,7 @@
 }
 
 .ProjectBar.Expanded{
-    max-height: 300px;
+    max-height: 5000px;
 }
 
 .ProjectTopBar{

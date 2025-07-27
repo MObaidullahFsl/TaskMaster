@@ -16,6 +16,8 @@ function makeTasks(Project,tasksArea){
     const priority = document.createElement("div");
     const topRow = document.createElement("div");
     const done = document.createElement("input");
+    const taskPrior = document.createElement("div");
+    const taskContent = document.createElement("div");
 
     done.type = "checkbox";
 
@@ -28,12 +30,30 @@ function makeTasks(Project,tasksArea){
     priority.classList.toggle("priority");
     done.classList.toggle("done");
     topRow.classList.toggle("taskTopRow");
+    taskPrior.classList.toggle("taskPrior");    
+    taskContent.classList.toggle("taskContent");
 
-    taskBar.appendChild(topRow);
+    switch (task.priority) {
+        case "low":
+            taskPrior.style.backgroundColor = "green";
+            break;
+        case "medium":
+            taskPrior.style.backgroundColor = "blue";
+            break;
+        case "high": 
+            taskPrior.style.backgroundColor = "red";
+            break;
+        default:
+            break;
+    }
+
     topRow.appendChild(taskTitle);
     topRow.appendChild(done);
-    taskBar.appendChild(taskDesc)
-    taskBar.appendChild(taskDue);
+    taskContent.appendChild(topRow);
+    taskContent.appendChild(taskDesc)
+    taskContent.appendChild(taskDue);
+    taskBar.appendChild(taskPrior);
+    taskBar.appendChild(taskContent);
 
         taskTitle.textContent = task.title;
         taskDesc.textContent = task.description;

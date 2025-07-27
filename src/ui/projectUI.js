@@ -17,7 +17,7 @@ function makeProject(Project){
     const tasksArea = document.createElement("div");
 
     const addBox = document.createElement("img");
-    
+    const color = Project.color;
     addBox.classList.add("addImage");
     addBox.src = addImage;
 
@@ -40,6 +40,7 @@ function makeProject(Project){
     projectBar.appendChild(date);
     projectBar.appendChild(expiry);
     projectBar.appendChild(tasksArea);
+    projectBar.style.backgroundColor = color;
 
     dashboard.appendChild(projectBar);
 

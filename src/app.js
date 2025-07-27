@@ -14,10 +14,11 @@ class App{
         const date = new Date();
         const tomorrow  = new Date(date);
         tomorrow.setDate(date.getDate()+1);
-        const defaultTodo = new Todo("Default Task","Hey this is a default Task supposed to remind you something useful", tomorrow, "Low",false);
+        const defaultTodo = new Todo("Default Task","Hey this is a default Task supposed to remind you something useful", tomorrow, "low",false);
         const defaultNote = new Note();
+        const color = "#0b3c49";
 
-        const DefaultProject = new Project(name,[defaultTodo],[defaultNote],tomorrow);
+        const DefaultProject = new Project(name,color,[defaultTodo],[defaultNote],tomorrow);
 
         this.ProjectList.push(DefaultProject);
 
@@ -43,6 +44,12 @@ class App{
         });
 
         return totalTasks;
+    }
+    toJSON(){
+        return{
+            projectlist: this.ProjectList,
+            type: "app"
+        }
     }
 }
 
