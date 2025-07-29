@@ -22,7 +22,15 @@ class App{
 
         this.ProjectList.push(DefaultProject);
 
-        
+        // if (storageAvailable) {
+
+        //  storageFix(this);
+
+        // }else{
+
+        // console.log("no storage support!");
+
+        // }        
             
     }
 
@@ -31,9 +39,10 @@ class App{
     }
 
     removeProject(project){
-        const toRemove = project.name;
         
-        this.ProjectList = this.ProjectList.filter((i)=>i.name != toRemove);
+        const date = project.date;
+       
+        this.ProjectList = this.ProjectList.filter((i)=> i.date != date);
         
     }
 

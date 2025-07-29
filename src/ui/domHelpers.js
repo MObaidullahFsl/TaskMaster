@@ -1,4 +1,5 @@
-import "../styles/projectStyles.css"
+import "../styles/projectStyles.css";
+import { ProjModalBody } from "./createProject";
 
 const body = document.querySelector("body");
 
@@ -12,25 +13,46 @@ const dashboard = document.querySelector(".dashboard");
 
 const content = document.querySelector(".content");
 
+const addProject = document.createElement("div");
+
+const removeProject = document.createElement("div");
+
 const buttons = document.querySelector(".buttons");
 
-   const addProject = document.createElement("div");
-    addProject.classList.toggle("addProject");
+function homeOptions() {
+  if (!document.querySelector(".addProject")) {
+
+    addProject.classList.add("addProject");
     addProject.textContent = "Add Project";
 
-    const removeProject = document.createElement("div");
-    removeProject.classList.toggle("removeProject");
+    removeProject.classList.add("removeProject");
     removeProject.textContent = "Remove Project";
 
-    
-function homeOptions(){
- 
     buttons.appendChild(addProject);
     buttons.appendChild(removeProject);
 
+    addProject.addEventListener("click", () => {
+      ProjModalBody.classList.toggle("Clicked");
+      if (dashboard.classList.contains("remove")) {
+        dashboard.classList.remove("remove");
+      }
+    });
+
+    removeProject.addEventListener("click", () => {
+      dashboard.classList.toggle("remove");
+      alert("Select Project to Remove!");
+    });
+  }
 }
 
-
-
-
-export {body,header,sidebar,links,dashboard,content,addProject,removeProject,homeOptions}; 
+export {
+  body,
+  header,
+  sidebar,
+  links,
+  dashboard,
+  content,
+  addProject,
+  removeProject,
+  homeOptions,
+};

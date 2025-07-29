@@ -15,17 +15,6 @@ const name = document.createElement("div");
 const dueDate = document.createElement("div");
 const color = document.createElement("div");
 
-function createProjectModal(){
-
-    
-ProjModalBody.classList.toggle("PMbody");
-title.classList.toggle("PMtitle");
-name.classList.toggle("PMname");
-dueDate.classList.toggle("PMdueDate");
-color.classList.toggle("PMcolor");
-note.classList.toggle("PMnote");
-
-
 const nameLabel = document.createElement("label");
 const dueDateLabel = document.createElement("label");
 const colorLabel = document.createElement("label");
@@ -37,6 +26,18 @@ const colorInput = document.createElement("input");
 const noteInput = document.createElement("input")
 
 const submitPM = document.createElement("button");
+
+function createProjectModal(){
+
+    
+ProjModalBody.classList.add("PMbody");
+title.classList.add("PMtitle");
+name.classList.add("PMname");
+dueDate.classList.add("PMdueDate");
+color.classList.add("PMcolor");
+note.classList.add("PMnote");
+
+
 submitPM.textContent = "submit";
 
 
@@ -87,8 +88,11 @@ ProjModalBody.appendChild(submitPM);
 
 
 
-body.appendChild(ProjModalBody);
 
+
+if(body.querySelector(".PMbody")){
+    return;
+}
 submitPM.addEventListener("click",()=>{
     const nameVal = nameInput.value;
     const dueVal  = dueDateInput.value;
@@ -106,9 +110,10 @@ submitPM.addEventListener("click",()=>{
          makeProject(app.ProjectList[p]);
      }
 
-     populateStorage(app);
+    // populateStorage(app);
 })
 
+body.appendChild(ProjModalBody);
 
 }
 

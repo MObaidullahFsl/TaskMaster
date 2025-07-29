@@ -6,6 +6,7 @@ import { taskModal } from "./createTask";
 import { TMbody } from "./createTask";
 import app from "../index"
 import { makeUI } from "./appUI";
+import storageFix from "../storage/storageFix";
 
 function makeProject(Project){
     
@@ -42,7 +43,6 @@ function makeProject(Project){
     projectBar.appendChild(tasksArea);
     projectBar.style.backgroundColor = color;
 
-    dashboard.appendChild(projectBar);
 
     const buttonHolder = document.createElement("div");
     buttonHolder.classList.toggle("buttonHolder");
@@ -60,6 +60,10 @@ function makeProject(Project){
     taskModal(Project,tasksArea);
 
     projectBar.appendChild(addBox);
+
+    // if(dashboard.querySelector(".ProjectBar")){
+    //     return;
+    // }
 
     buttonHolder.addEventListener("click",()=>{
 
@@ -87,13 +91,16 @@ function makeProject(Project){
     })
     projectBar.addEventListener("transitionend",(element)=>{
         if(element.propertyName == "transform" && dashboard.classList.contains("remove")){
-            dashboard.classList.remove("remove")
+            dashboard.classList.remove("remove");
+           // localStorage.removeItem("app");
             app.removeProject(Project);
             makeUI(app);
-
+            //storageFix(app);
         }
             
     })
+
+        dashboard.appendChild(projectBar);
 
 }
 

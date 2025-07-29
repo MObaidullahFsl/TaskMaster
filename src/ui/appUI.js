@@ -11,31 +11,18 @@ function makeUI(app){
 
     const projectList = app.ProjectList;
 
-    if(projectList.length === 0){
+    if(!projectList){
         return;
     }
-
      for(const p in projectList){
          makeProject(projectList[p]);
      }
 
      homeOptions();
-     
+
      createProjectModal();
 
-     addProject.addEventListener("click",()=>{  
-             ProjModalBody.classList.toggle("Clicked");
-             if(dashboard.classList.contains("remove")){
-                dashboard.classList.remove("remove");
-             }
-         
-     })
-
-     removeProject.addEventListener("click",()=>{  
-             dashboard.classList.toggle("remove");
-             alert("Select Project to Remove!");
-         
-     })
+    
      
 
 }

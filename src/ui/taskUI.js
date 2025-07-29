@@ -1,3 +1,4 @@
+import storageFix from "../storage/storageFix";
 import "../styles/taskStyles.css"
 import { taskModal} from "../ui/createTask";
 
@@ -70,6 +71,8 @@ function makeTasks(Project,tasksArea){
         if(transition.propertyName === "transform" && taskBar.classList.contains("removeTask")){
             Project.removeTask(task);
             makeTasks(Project,tasksArea);
+           // localStorage.removeItem("app");
+           //storageFix(app);
         }
     })
     

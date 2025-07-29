@@ -4,7 +4,7 @@ class Project {
         this.name = name;
         this.todoList = todoList;
         this.notesList = notesList;
-        this.date = new Date().getDate();
+        this.date = new Date();
         this.expiryDate = expiryDate;
         this.color = color;
     }

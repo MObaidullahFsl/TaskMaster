@@ -81,8 +81,10 @@ TMbody.appendChild(dueDate);
 TMbody.appendChild(priority);
 TMbody.appendChild(submitTM);
 
-body.appendChild(TMbody);
 
+if(body.querySelector(".TMbody")){
+    return;
+}
 submitTM.addEventListener("click",()=>{
     const titleVal = titleInput.value;
     const descVal = descInput.value;
@@ -95,10 +97,10 @@ submitTM.addEventListener("click",()=>{
     TMbody.classList.remove("Clicked");
     makeTasks(Project,taskArea);
 
-    populateStorage(app);
+    //populateStorage(app);
 })
 
-
+body.appendChild(TMbody);
 }
 
 export { TMbody,taskModal };
