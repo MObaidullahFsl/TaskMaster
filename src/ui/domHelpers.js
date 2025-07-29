@@ -1,5 +1,6 @@
 import "../styles/projectStyles.css";
 import { ProjModalBody } from "./createProject";
+import comingSoon from "../assets/soon.png"
 
 const body = document.querySelector("body");
 
@@ -18,6 +19,10 @@ const addProject = document.createElement("div");
 const removeProject = document.createElement("div");
 
 const buttons = document.querySelector(".buttons");
+
+const AllTasks = document.querySelector(".allTasks");
+
+const Calender = document.querySelector(".Calender");
 
 function homeOptions() {
   if (!document.querySelector(".addProject")) {
@@ -42,6 +47,14 @@ function homeOptions() {
       dashboard.classList.toggle("remove");
       alert("Select Project to Remove!");
     });
+
+    AllTasks.addEventListener('click', () => {
+      window.open(comingSoon, '_blank');
+    });
+    Calender.addEventListener('click', () => {
+      window.open(comingSoon, '_blank');
+    });
+
   }
 }
 

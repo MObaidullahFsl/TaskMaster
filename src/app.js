@@ -30,8 +30,8 @@ class App{
 
         // console.log("no storage support!");
 
-        // }        
-            
+        // }       
+      
     }
 
     addProject(project){
