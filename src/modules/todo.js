@@ -6,6 +6,7 @@ class Todo {
         this.dueDate= dueDate; 
         this.priority = priority; 
         this.done = done; 
+        this.date = new Date();
     }
 
     set increasePriority(newPriority){

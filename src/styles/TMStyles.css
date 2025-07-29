@@ -26,4 +26,13 @@
 .TMbody > *{
     display:flex;
     padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.TMbody label{
+    color: black;
+    font-size: 18px;
+    padding: 0 10px;
+
 }

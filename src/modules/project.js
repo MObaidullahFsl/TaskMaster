@@ -13,13 +13,13 @@ class Project {
         this.todoList.push(task);
     }
     removeTask(t){
-        this.todoList = this.todoList.filter((todo)=>todo.title != t.title);
+        this.todoList = this.todoList.filter((todo)=>todo.date != t.date);
     }
     addNote(note){
         this.notesList.push(note);
     }
     removeNote(note){
-        this.notesList=this.notesList.filter((n)=>{ n.text != note.text });
+        this.notesList=this.notesList.filter((n)=>{ n.date != note.date });
     }
     setColor(color){
         this.color = color;

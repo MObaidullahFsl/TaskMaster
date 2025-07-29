@@ -57,8 +57,6 @@ function makeProject(Project){
 
     makeTasks(Project,tasksArea);
 
-    taskModal(Project,tasksArea);
-
     projectBar.appendChild(addBox);
 
     // if(dashboard.querySelector(".ProjectBar")){
@@ -77,7 +75,13 @@ function makeProject(Project){
     })
 
     addBox.addEventListener("click",()=>{
-        TMbody.classList.toggle("Clicked"); 
+        if(projectBar.querySelector(".TMbody")){
+            projectBar.querySelector(".TMbody").classList.add("Clicked");
+        }else{
+
+            taskModal(Project,tasksArea,projectBar);
+        }
+
     })
 
 

@@ -3,6 +3,7 @@ class Note{
     #text
     constructor(text = "Here you add your notes for this project. "){
        this.#text = text;
+       this.date = new Date();
     }
 
     get text() {
