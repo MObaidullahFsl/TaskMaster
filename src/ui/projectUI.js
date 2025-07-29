@@ -16,14 +16,16 @@ function makeProject(Project){
     const expiry = document.createElement("div");
     const topbar = document.createElement("div");
     const tasksArea = document.createElement("div");
-
+    const dates = document.createElement("div");
     const addBox = document.createElement("img");
     const color = Project.color;
+
     addBox.classList.add("addImage");
     addBox.src = addImage;
 
     projectBar.innerHTML="";
-  
+    
+    dates.classList.toggle("ProjDates");
     projectBar.classList.toggle("ProjectBar");
     title.classList.toggle("ProjectTitle");
     date.classList.toggle("ProjectDate");
@@ -32,14 +34,15 @@ function makeProject(Project){
     tasksArea.classList.toggle("tasksArea");
 
     title.textContent=Project.name;
-    date.textContent=Project.date;
-    expiry.textContent=Project.expiryDate;
+    date.textContent= "Made at : " + `${Project.date.toISOString().split('T')[0]}`;
+    expiry.textContent="Expires : " + `${Project.expiryDate.toISOString().split('T')[0]}`;;
 
     topbar.appendChild(title);
     
+    dates.appendChild(date);
+    dates.appendChild(expiry);
     projectBar.appendChild(topbar);
-    projectBar.appendChild(date);
-    projectBar.appendChild(expiry);
+    projectBar.appendChild(dates);
     projectBar.appendChild(tasksArea);
     projectBar.style.backgroundColor = color;
 

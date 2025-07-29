@@ -5,6 +5,7 @@ import { makeProject } from "./projectUI";
 import Note from "../modules/note"
 import app from "../index";
 import { populateStorage } from "../storage/storageFix";
+        import closebutton from "../assets/close.png"
 
 
 
@@ -26,10 +27,13 @@ const colorInput = document.createElement("input");
 const noteInput = document.createElement("input")
 
 const submitPM = document.createElement("button");
+const heading = document.createElement("div");
+    const cross = document.createElement("img");
+        cross.src = closebutton;
 
 function createProjectModal(){
 
-    
+heading.classList.add("PMheading");
 ProjModalBody.classList.add("PMbody");
 title.classList.add("PMtitle");
 name.classList.add("PMname");
@@ -38,7 +42,7 @@ color.classList.add("PMcolor");
 note.classList.add("PMnote");
 
 
-submitPM.textContent = "submit";
+submitPM.textContent = "Enter";
 
 
     const date = new Date();
@@ -62,10 +66,10 @@ dueDateLabel.for="date"
 colorLabel.for="color"
 noteLabel.for="text"
 
-
-nameLabel.textContent="name"
-dueDateLabel.textContent="date"
-colorLabel.textContent="color"
+heading.textContent = "MAKE PROJECT"
+nameLabel.textContent="Name"
+dueDateLabel.textContent="Due Date"
+colorLabel.textContent="Color"
 noteLabel.textContent="Note"
 
 name.appendChild(nameLabel);
@@ -79,6 +83,8 @@ color.appendChild(colorInput);
 note.appendChild(noteLabel);
 note.appendChild(noteInput);
 
+ProjModalBody.appendChild(cross);
+ProjModalBody.appendChild(heading);
 ProjModalBody.appendChild(title);
 ProjModalBody.appendChild(name)
 ProjModalBody.appendChild(dueDate);
@@ -111,6 +117,10 @@ submitPM.addEventListener("click",()=>{
      }
 
     // populateStorage(app);
+})
+
+cross.addEventListener("click",()=>{
+    ProjModalBody.classList.remove("Clicked");
 })
 
 body.appendChild(ProjModalBody);

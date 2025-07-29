@@ -3,10 +3,10 @@
     display:flex;
     flex-direction: column;
     padding: 30px 20px;
-    background-color: var(--bg-sec);
-    color:white;
+    background-color: var(--vvlight-bg);
+    color:var(--font-prim);
     margin: 10px 20px;
-    max-width: 95%;
+    max-width: 94%;
     width:100%;
     max-height: 50px;
     overflow-y: hidden;
@@ -25,25 +25,29 @@
     max-height: 5000px;
 }
 
+.ProjDates{
+    display: flex;
+    justify-content: space-between;
+}
 .ProjectTopBar{
     display: flex;
     flex-direction: row;
     color:var(--sec); 
     justify-content: space-between;
+    margin-bottom: 10px;
     
 }
 .ProjectTopBar.Expanded{
-    font-size: 20px;
+    font-size: 22px
 }
-
 .ProjectExpiry{
-    color:var(--sec);
+    color:var(--font-prim);
 
 }
 
 .ProjectTitle{
     font-size: 20px;
-    color: var(--prim);
+    color: var(--font-prim);
 }
 
 .arrowButton{
@@ -65,6 +69,7 @@
     height:20px;
     object-fit: contain;
     align-self:flex-end;
+    margin-top: 20px;
 }
 .tasksArea{
     margin-top: 50px;

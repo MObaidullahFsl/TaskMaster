@@ -1,19 +1,21 @@
 .TMbody{
-    background-color: var(--prim);
+    background-color: var(--med-bg);
     border:1px solid black;
     position: fixed; top:50%; left:50%; 
     transform: translate(-50%,-50%)scale(0);
     transition: transform 50ms ease;
     pointer-events: none;
-    border-radius: 10%;
+    border: 10px solid var(--font-prim);
     width:fit-content;
     height:fit-content;
     z-index: 999;
     max-width: 80%;
     display: flex;
     flex-direction: column;
-    padding: 5% 15%;
+    padding: 2% 7%;
     gap:10px;
+    color:var(--font-prim);
+    font-family: 'Times New Roman', Times, serif;
 } 
 
 
@@ -23,16 +25,49 @@
 
 }
 
-.TMbody > *{
+.TMbody > div{
     display:flex;
     padding: 10px;
     justify-content: space-between;
     align-items: center;
+    border: 1px solid var(--med-bg);
 }
 
 .TMbody label{
-    color: black;
-    font-size: 18px;
+    
+    font-size: 22px;
     padding: 0 10px;
-
+    padding-right: 300px;
+    text-wrap: nowrap;
 }
+
+    .TMbody > button{
+        
+        justify-self: center;
+        padding: 12px 30px;
+        margin: 10px auto; 
+        border-radius: 20px;
+        background-color: var(--vdark-bg);
+        color: var(--font-prim);
+        font-size: 20px;
+        border: 2px solid var(--med-bg);
+    }
+    .TMbody > button:hover, .TMbody > button:focus {
+        
+    transform: scale(1.05);
+    }
+    .TMheading{
+        display: none;
+        align-self: center;
+        font-size: 25px;
+        color: var(--dark-bg);
+        font-weight: 600;
+        text-decoration-line:underline ;
+    }
+
+    .TMbody > img{
+        width: 20px;
+        height: 20px;
+        justify-self: flex-end;
+        align-self: flex-end;
+    }

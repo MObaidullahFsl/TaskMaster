@@ -16,7 +16,7 @@ class App{
         tomorrow.setDate(date.getDate()+1);
         const defaultTodo = new Todo("Default Task","Hey this is a default Task supposed to remind you something useful", tomorrow, "low",false);
         const defaultNote = new Note();
-        const color = "#0b3c49";
+        const color = "#474448";
 
         const DefaultProject = new Project(name,color,[defaultTodo],[defaultNote],tomorrow);
 

@@ -36,13 +36,13 @@ function makeTasks(Project,tasksArea){
 
     switch (task.priority) {
         case "low":
-            taskPrior.style.backgroundColor = "green";
+            taskPrior.style.backgroundColor = "#9ACD32";
             break;
         case "medium":
-            taskPrior.style.backgroundColor = "blue";
+            taskPrior.style.backgroundColor = "#6F00FF";
             break;
         case "high": 
-            taskPrior.style.backgroundColor = "red";
+            taskPrior.style.backgroundColor = "#A91101";
             break;
         default:
             break;

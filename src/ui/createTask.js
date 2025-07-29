@@ -4,6 +4,7 @@ import Todo from "../modules/todo";
 import { makeProject } from "./projectUI";
 import { makeTasks } from "./taskUI";
 import { populateStorage } from "../storage/storageFix";
+    import closebutton from "../assets/close.png"
 
 function taskModal(Project,taskArea,projectBar){
     
@@ -28,6 +29,11 @@ function taskModal(Project,taskArea,projectBar){
     
     const submitTM = document.createElement("button");
 
+    const heading = document.createElement("div");
+    const cross = document.createElement("img");
+        cross.src = closebutton;
+
+heading.classList.add("TMheading");
 TMbody.classList.add("TMbody");
 TMbody.classList.add("Clicked"); 
 title.classList.add("TMtitle");
@@ -43,7 +49,7 @@ lowOption.textContent = "Low";
 medOption.textContent = "Medium";
 highOption.textContent = "High";
 
-submitTM.textContent = "submit";
+submitTM.textContent = "Enter";
 
 titleInput.type = "text";
 descInput.type = "text";
@@ -65,10 +71,11 @@ titleLabel.htmlFor="title"
 dueDateLabel.htmlFor="date"
 priorityLabel.htmlFor="priority"
 
-titleLabel.textContent="title"
-descLabel.textContent = "Description"
-dueDateLabel.textContent="date"
-priorityLabel.textContent="priority"
+titleLabel.textContent="Title :"
+descLabel.textContent = "Description :"
+dueDateLabel.textContent="Due Date :"
+priorityLabel.textContent="Priority :"
+heading.textContent = "ADD TASK";
 
 titleInput.id = "title";
 
@@ -88,6 +95,8 @@ dueDate.appendChild(dueDateInput);
 desc.appendChild(descInput);
 priority.appendChild(prioritySelect);
 
+TMbody.appendChild(cross);
+TMbody.appendChild(heading)
 TMbody.appendChild(title);
 TMbody.appendChild(desc);
 TMbody.appendChild(dueDate);
@@ -112,6 +121,10 @@ submitTM.addEventListener("click",()=>{
 
     
     //populateStorage(app);
+})
+
+cross.addEventListener("click",()=>{
+    TMbody.classList.remove("Clicked");
 })
 
 projectBar.appendChild(TMbody);

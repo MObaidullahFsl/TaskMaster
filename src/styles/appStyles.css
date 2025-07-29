@@ -1,12 +1,13 @@
 :root {
-
-  --prim: #fffdfd;
-  --sec: #cbd2d0;
-  --bg-prim:#731963;
-  --bg-sec:#0b3c49;
-  --spacing-small: 8px;
-  --spacing-large: 16px;
-  
+    --vdark-bg:#2d232e;
+    --dark-bg: #F1F0EA ;
+    --med-bg: #534B52;
+    --vvlight-bg: #474448;
+    --vlight-bg:#64dfdf;
+    --light-bg: #48bfe3;
+    --font-prim: #E0DDCF;
+    --font-sec: #e9ecef;
+    --font-dark: #6c757d; 
 }
 
 html{
@@ -15,7 +16,7 @@ html{
 body{
     margin:0;
     padding:0;
-    background-color:azure;
+    background-color:var(--dark-bg);
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -24,12 +25,13 @@ body{
 .header{
     display: flex;
     justify-content: space-between;
-    background-color: var(--sec);
-    border-bottom: 1px solid blue;  
+    background-color: var(--med-bg);
+    border-bottom: 1px solid var(--vvlight-bg);  
     padding:40px 30px;
     align-items: center;
     font-size: 22px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--font-prim);
 }
 .title{
     margin-left: 45px;
@@ -39,9 +41,9 @@ body{
     flex-direction: column;
     justify-content:flex-start;
     align-items:flex-start;
-    background-color: var(--bg-prim);
+    background-color: var(--vdark-bg);
     padding:30px 50px;
-    color:white;
+    color:var(--font-prim);
     min-height: 100%;
     font-size: 20px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -53,14 +55,14 @@ body{
     display: flex;
     min-height: 100vh;
     width: auto;
-    background-color: var(--prim);
+    background-color: var(--dark-bg);
 
 }
 
 .dashboard{
     display: flex;
     flex-direction: column;
-    background-color: var(--prim);
+    background-color: var(--dark-bg);
     width: 100%;
     height: 100%;
     overflow-x: hidden;
@@ -71,12 +73,16 @@ body{
     flex-direction: row;
     gap:15px;
     font-size: 20px;
-    color: blue;
+    color: var(--font-prim);
+    
 }
 .links>*:visited,.links>*:hover{
-    color: purple;
+    color: var(--font-prim);
 }
-
+.links > * {
+    border: 2px solid var(--vdark-bg);
+    padding: 5px 15px;
+}
 .buttons{
     display: flex;
     flex-direction: column;
@@ -85,6 +91,6 @@ body{
     font-size: 16px;
 }
 .buttons > *{
-    border:2px solid var(--bg-sec);
+    border:2px solid var(--vvlight-bg);
     padding:10px 20px;
 }
