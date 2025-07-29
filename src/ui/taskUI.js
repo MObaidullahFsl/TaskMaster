@@ -1,6 +1,7 @@
-import storageFix from "../storage/storageFix";
+import { populateStorage } from "../storage/storageFix";
 import "../styles/taskStyles.css"
 import { taskModal} from "../ui/createTask";
+import app from "../index";
 
 function makeTasks(Project,tasksArea){
     
@@ -70,9 +71,9 @@ function makeTasks(Project,tasksArea){
     taskBar.addEventListener("transitionend",(transition)=>{
         if(transition.propertyName === "transform" && taskBar.classList.contains("removeTask")){
             Project.removeTask(task);
-            makeTasks(Project,tasksArea);
-           // localStorage.removeItem("app");
-           //storageFix(app);
+            //makeTasks(Project,tasksArea); is this needed now ?
+            populateStorage(app);
+           
         }
     })
     

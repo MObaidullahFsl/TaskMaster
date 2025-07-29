@@ -5,7 +5,7 @@ import { makeProject } from "./projectUI";
 import Note from "../modules/note"
 import app from "../index";
 import { populateStorage } from "../storage/storageFix";
-        import closebutton from "../assets/close.png"
+import closebutton from "../assets/close.png"
 
 
 
@@ -116,7 +116,7 @@ submitPM.addEventListener("click",()=>{
          makeProject(app.ProjectList[p]);
      }
 
-    // populateStorage(app);
+    populateStorage(app);
 })
 
 cross.addEventListener("click",()=>{

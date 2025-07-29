@@ -4,7 +4,8 @@ import Todo from "../modules/todo";
 import { makeProject } from "./projectUI";
 import { makeTasks } from "./taskUI";
 import { populateStorage } from "../storage/storageFix";
-    import closebutton from "../assets/close.png"
+import closebutton from "../assets/close.png"
+import app from "../index";
 
 function taskModal(Project,taskArea,projectBar){
     
@@ -120,7 +121,7 @@ submitTM.addEventListener("click",()=>{
     makeTasks(Project,taskArea);
 
     
-    //populateStorage(app);
+    populateStorage(app);
 })
 
 cross.addEventListener("click",()=>{

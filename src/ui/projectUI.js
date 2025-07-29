@@ -6,7 +6,7 @@ import { taskModal } from "./createTask";
 import { TMbody } from "./createTask";
 import app from "../index"
 import { makeUI } from "./appUI";
-import storageFix from "../storage/storageFix";
+import { populateStorage } from "../storage/storageFix";
 
 function makeProject(Project){
     
@@ -34,8 +34,15 @@ function makeProject(Project){
     tasksArea.classList.toggle("tasksArea");
 
     title.textContent=Project.name;
+    if( typeof Project.date === "string"){
+        Project.date = new Date(Project.date);
+    }
+    if( typeof Project.expiryDate === "string"){
+        Project.expiryDate = new Date(Project.expiryDate);
+    }
+
     date.textContent= "Made at : " + `${Project.date.toISOString().split('T')[0]}`;
-    expiry.textContent="Expires : " + `${Project.expiryDate.toISOString().split('T')[0]}`;;
+    expiry.textContent="Expires : " + `${Project.expiryDate.toISOString().split('T')[0]}`;
 
     topbar.appendChild(title);
     
@@ -99,10 +106,9 @@ function makeProject(Project){
     projectBar.addEventListener("transitionend",(element)=>{
         if(element.propertyName == "transform" && dashboard.classList.contains("remove")){
             dashboard.classList.remove("remove");
-           // localStorage.removeItem("app");
             app.removeProject(Project);
-            makeUI(app);
-            //storageFix(app);
+            //makeUI(app); is this needed now?
+            populateStorage(app);
         }
             
     })

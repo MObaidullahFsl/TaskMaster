@@ -6,13 +6,13 @@ class Note{
        this.date = new Date();
     }
 
-    get text() {
-        return this.text;
-    }
+    // get text() {
+    //     return this.text;
+    // }
 
-    set text(newText){
-        this.text = newText
-    }
+    // set text(newText){
+    //     this.text = newText
+    // }
 }
 
 export default Note

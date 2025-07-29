@@ -32,7 +32,7 @@ function loadFromStorage(app) {
   
   loadedApp.ProjectList.forEach(project => {
 
-    const newProj = new Project(project.name,project.color,[],[],project.expiryDate);
+    const newProj = new Project(project.name,project.color,[],[],new Date(project.expiryDate));
 
     project.todoList.forEach(task =>{
       const newTask = new Todo(task.title,task.description,task.dueDate,task.priority,task.done);
