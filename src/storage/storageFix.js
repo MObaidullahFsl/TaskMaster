@@ -28,6 +28,11 @@ function loadFromStorage(app) {
 
   const loadedApp = JSON.parse(localStorage.getItem("app"));
 
+    if (!loadedApp || !loadedApp.ProjectList) {
+    console.warn("No saved data in localStorage. Skipping load.");
+    return;
+  }
+  
   app.ProjectList.length = 0;
   
   loadedApp.ProjectList.forEach(project => {
